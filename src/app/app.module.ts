@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatChipsModule} from '@angular/material/chips';
+import { environment } from '../environments/environment';
 
 // components
 import { TripCardComponent } from './components/trip-card/trip-card.component';
@@ -86,7 +87,7 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBSqhCPvGdIep-riFlAlKyWojxgh3T-BwM',
+      apiKey: environment.gmKey,
       libraries: ["places"]
     }),
     RouterModule.forRoot(routes),

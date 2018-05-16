@@ -22,6 +22,7 @@ export class ItineraryPageComponent implements OnInit {
   destinations = [];
   itineraryid: String;
 
+
   constructor(private mapsAPILoader:  MapsAPILoader, private ngZone: NgZone, private itineraryService: ItineraryService,
     private destinationService: DestinationService, private activatedRoute: ActivatedRoute, private router: Router ) { }
 
@@ -52,7 +53,7 @@ export class ItineraryPageComponent implements OnInit {
       endDate : this.endDate,
       place_id : this.place.place_id,
       location: { coordinates: [ this.place.geometry.location.lat(), this.place.geometry.location.lng() ] },
-      photoUrl: this.place.photos[0].getUrl({maxWidth: 100, maxHeight: 100})
+      photoUrl: this.place.photos[0].getUrl({maxWidth: 1024, maxHeight: 768})
     };
     this.destinations.push(destination);
     console.log(this.destinations);

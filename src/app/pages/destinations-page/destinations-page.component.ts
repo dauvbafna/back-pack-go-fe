@@ -3,6 +3,7 @@ import { TripService } from '../../services/trip.service';
 import { ItineraryService } from '../../services/itinerary.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-destinations-page',
@@ -13,7 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class DestinationsPageComponent implements OnInit {
 
   currentJustify = 'fill';
-  trip: Object;
+  trip: any;
   tripId: string;
   itinerary: any;
   itineraryId: String;
@@ -22,7 +23,7 @@ export class DestinationsPageComponent implements OnInit {
 
   constructor(private tripService: TripService, private itineraryService: ItineraryService,
     private activatedRoute: ActivatedRoute, private router: Router, private sanitizer: DomSanitizer ) {
-      this.queryString = sanitizer.bypassSecurityTrustResourceUrl("https://www.google.com/maps/embed/v1/search?key=AIzaSyBSqhCPvGdIep-riFlAlKyWojxgh3T-BwM&q=barcelona");
+      this.queryString = sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed/v1/search?key=${environment.gmKey}&q=barcelona`);
     }
 
   ngOnInit() {
@@ -44,17 +45,17 @@ export class DestinationsPageComponent implements OnInit {
   }
 
   handleMapLoad(destination) {
-    this.queryString = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed/v1/search?key=AIzaSyBSqhCPvGdIep-riFlAlKyWojxgh3T-BwM&q=${destination.destinationName}`);
+    this.queryString = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed/v1/search?key=${environment.gmKey}&q=${destination.destinationName}`);
     console.log(this.queryString);
   }
 
   handleThingsToDo(destination) {
-    this.queryString = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed/v1/search?key=AIzaSyBSqhCPvGdIep-riFlAlKyWojxgh3T-BwM&q=things+to+do+in+${destination.destinationName}`);
+    this.queryString = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed/v1/search?key=${environment.gmKey}&q=things+to+do+in+${destination.destinationName}`);
     console.log(this.queryString);
   }
 
   handleRestaurants(destination) {
-    this.queryString = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed/v1/search?key=AIzaSyBSqhCPvGdIep-riFlAlKyWojxgh3T-BwM&q=restaurants+in+${destination.destinationName}`);
+    this.queryString = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed/v1/search?key=${environment.gmKey}&q=restaurants+in+${destination.destinationName}`);
     console.log(this.queryString);
   }
 }
