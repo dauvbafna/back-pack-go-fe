@@ -31,6 +31,13 @@ export class TripService {
       .toPromise();
   }
 
+  inviteOne(user, tripID){
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.post(`${this.baseUrl}/trip/${tripID}/invite`, {user}, options)
+      .toPromise();
+  }
 }
 
 

@@ -28,7 +28,10 @@
     <a [routerLink]="['/trip/', trip._id, 'invite']"> Invite to trip</a>
 
     <h2>Who's Travelling</h2>
-    <p>{{trip.users}}</p>
+    <ng-container *ngFor="let user of trip.users">
+      <p>{{user.username}}</p>
+    </ng-container>
+
   </ng-container>
   
 
