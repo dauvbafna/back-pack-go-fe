@@ -1,0 +1,48 @@
+<p>
+  destinations-page works!
+</p>
+
+<h1>{{trip.tripName}}</h1>
+            
+    <div class=" wrapper wrapper-content animated fadeIn">
+       <ngb-tabset [justify]="currentJustify" >
+         <ngb-tab  *ngFor="let destination of destinations">
+            <ng-template ngbTabTitle>
+                <div (click)="handleMapLoad(destination)">{{destination.destinationName}}</div>
+            </ng-template> 
+          <ng-template ngbTabContent>
+             <div class="row" >
+                 <img alt="image" class="img-responsive" [src]="destination.photoUrl"> 
+             </div>
+
+             <div class="row">
+               <p>Explore {{destination.destinationName}}</p>
+               <p>{{destination.startDate}}</p>
+               <p>{{destination.endDate}}</p>
+             </div>
+            
+              <div class="row" >
+                <div class="col-xs-12">
+                    <a class="btn btn-success btn-rounded" (click)="handleThingsToDo(destination)">Things to do</a>
+                    <a class="btn btn-success btn-rounded" (click)="handleRestaurants(destination)" >Restaurants near me</a>
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="google-map" id="map1">
+                      <iframe
+                      width=100%
+                      height="450"
+                      frameborder="0" style="border:0"
+                      [src]="queryString" allowfullscreen>
+                    </iframe>
+                  </div>             
+              </div>
+
+          </ng-template>
+        </ngb-tab>
+        </ngb-tabset>
+
+      </div>
+
+      

@@ -1,0 +1,14 @@
+<p>
+  trips-page works! (rename component to trip page)
+</p>
+
+<div>
+    <a [routerLink]="['/trip/create']">Create new trip</a>
+
+        <div>Upcoming trips</div>
+        <div *ngFor="let trip of trips">
+            <app-trip-card [trip]="trip"></app-trip-card>
+            <a [routerLink]="['/trip', trip._id]">Detail</a>
+        </div>
+
+</div>

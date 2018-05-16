@@ -1,0 +1,31 @@
+<p>
+  itinerary-page works!
+</p>
+
+<div>
+  <h2>Add a destination to your itinerary</h2>
+  <label>City</label>
+  <div ng-form="search">
+    <input type="text" placeholder="Any location in the world" autocomplete="off" spellcheck="off" class="form-control" #search>
+    
+    <div class="field">
+      <label>Start Date</label>
+      <input type="date" name="startDate" [(ngModel)]="startDate" #startDateField="ngModel"/>
+    </div>
+  
+    <div class="field">
+      <label>End Date</label>
+      <input type="date" name="endDate" [(ngModel)]="endDate" #endDateField="ngModel"/>
+    </div>
+  </div>
+</div>
+
+<button (click)="handleAddClick()">Add</button>
+<button (click)="addDestinations()">Submit</button>
+
+<div *ngIf="destinationList">
+  <ul>
+    <li *ngFor="let destination of destinationList">{{destination.destinationName}}</li>
+  </ul>
+  
+</div>

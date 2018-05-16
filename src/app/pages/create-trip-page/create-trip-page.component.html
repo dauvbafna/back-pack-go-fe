@@ -1,0 +1,25 @@
+<p>
+  create-trip-page works!
+</p>
+
+<form (ngSubmit)="submitForm(form)" #form="ngForm">
+
+    <div class="field" >
+      <label>Trip Name</label>
+      <input type="text" name="tripName" [(ngModel)]="tripName" #tripNameField="ngModel" />
+    </div>
+
+    <div class="field">
+      <label>Start Date</label>
+      <input type="date" name="startDate" [(ngModel)]="startDate" #startDateField="ngModel"/>
+    </div>
+
+    <div class="field">
+      <label>End Date</label>
+      <input type="date" name="endDate" [(ngModel)]="endDate" #endDateField="ngModel"/>
+    </div>
+
+    <div class="field submit">
+      <button type="submit">Create Trip</button>
+    </div>
+</form>

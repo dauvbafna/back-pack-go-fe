@@ -1,0 +1,34 @@
+<p>
+  trip-detail-page works!
+</p>
+
+<ng-container *ngIf="!trip">
+    Loading . . . . . .
+  </ng-container>
+
+<ng-container *ngIf="trip">
+    <app-trip-card [trip]="trip"></app-trip-card>
+
+    <h2>Itinerary</h2>
+    <ng-container *ngIf="!itineraryStatus">
+        <a (click)="newItinerary(trip._id)">Create Itinerary</a>
+    </ng-container>
+
+    <ng-container *ngIf="itineraryStatus">
+        <a [routerLink]="['/trip/', trip._id, 'itinerary', itineraryId]">View Itinerary</a>
+    </ng-container>
+
+    <h2>Reservations</h2>
+    <a [routerLink]="['/trip/', trip._id, 'reservations']">Add reservations</a>
+    
+    <h2>Destinations</h2>
+    <a [routerLink]="['/trip/', trip._id, 'destinations']">Explore destinations</a>
+
+    <h2>Invite friends</h2>
+    <a [routerLink]="['/trip/', trip._id, 'invite']"> Invite to trip</a>
+
+    <h2>Who's Travelling</h2>
+    <p>{{trip.users}}</p>
+  </ng-container>
+  
+
