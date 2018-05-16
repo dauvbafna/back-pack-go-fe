@@ -54,11 +54,11 @@ const routes: Routes = [
   { path: 'signup', component: SignUpPageComponent, canActivate: [ RequireAnonGuardService ]},
   { path: 'trip', component: ProfilePageComponent, canActivate: [ RequireUserGuardService ]},
   { path: 'trip/create', component: CreateTripPageComponent, canActivate: [ RequireUserGuardService ]},
-  { path: 'trip/:id', component: TripDetailPageComponent },
-  { path: 'trip/:id/itinerary/:id', component: ItineraryPageComponent },
-  { path: 'trip/:id/reservations', component: ReservationsPageComponent },
-  { path: 'trip/:id/destinations', component: DestinationsPageComponent },
-  { path: 'trip/:id/invite', component: InvitePageComponent }
+  { path: 'trip/:id', component: TripDetailPageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'trip/:id/itinerary/:id', component: ItineraryPageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'trip/:id/reservations', component: ReservationsPageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'trip/:id/destinations', component: DestinationsPageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'trip/:id/invite', component: InvitePageComponent, canActivate: [ RequireUserGuardService ] }
 
 ];
 
