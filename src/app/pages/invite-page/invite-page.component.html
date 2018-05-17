@@ -1,15 +1,10 @@
-<p>
-  invite-page works!
-</p>
-
 <form (ngSubmit)="submitForm(form)" #form="ngForm">
 
-    <div class="field" >
+    <div class="form-group" >
       <label>Username</label>
-      <input type="text" name="invitedUserName" [(ngModel)]="invitedUserName" #inviteField="ngModel" />
+      <input type="text" name="invitedUserName" class="form-control" [(ngModel)]="invitedUserName" #inviteField="ngModel" />
     </div>
 
-    <div class="field submit">
-      <button type="submit">Invite</button>
-    </div>
+      <button type="submit" class="btn btn-primary">Invite</button>
+  
 </form>

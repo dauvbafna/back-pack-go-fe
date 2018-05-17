@@ -1,0 +1,58 @@
+@media only screen and (max-width: 320px) {
+  .iphone5{
+    font-size: 2rem;
+    float: none;
+    margin: 36px;
+  }
+}
+@media only screen and (max-width: 411px ){
+font-size: 2rem;
+float: none;
+margin: 50px;
+}
+
+.example-header-image {
+  background-image: url('https://www.sarthaks.com/refer-friend/icon-group.png');
+  background-size: cover;
+}
+
+.tripdetailhead{
+  margin-top: 10px;
+  text-align: center;
+  background-color: white;
+  color:whitesmoke;
+  font-size: 25px;
+  font-weight: 800;
+  background-image: linear-gradient(to left bottom, #f6a53a, #f06343, #d2125c, #950076, #220d83);
+}
+
+.tripdetailcard{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  background-color: white;
+}
+
+.mat-card-image{
+  width: 95%; 
+}
+
+  .travellers{
+    margin-bottom: 10px;
+  }
+  .travellers.mat-card-title{
+    align-items: center;
+  }
+  .mat-card-avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.mat-card-content, .mat-card-header .mat-card-title, .mat-card-subtitle {
+  font-size: 20px;
+}
+
+
+.btn-grad {background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%)}
+.btn-grad:hover { background-position: right center; }

@@ -1,25 +1,22 @@
-<p>
-  create-trip-page works!
-</p>
-
 <form (ngSubmit)="submitForm(form)" #form="ngForm">
 
-    <div class="field" >
+    <div class="form-group" >
       <label>Trip Name</label>
-      <input type="text" name="tripName" [(ngModel)]="tripName" #tripNameField="ngModel" />
+      <input type="text" name="tripName" class="form-control"  [(ngModel)]="tripName" #tripNameField="ngModel" />
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <label>Start Date</label>
-      <input type="date" name="startDate" [(ngModel)]="startDate" #startDateField="ngModel"/>
+      <input type="date" name="startDate" class="form-control" [(ngModel)]="startDate" #startDateField="ngModel"/>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <label>End Date</label>
-      <input type="date" name="endDate" [(ngModel)]="endDate" #endDateField="ngModel"/>
+      <input type="date" name="endDate" class="form-control" [(ngModel)]="endDate" #endDateField="ngModel"/>
     </div>
 
-    <div class="field submit">
-      <button type="submit">Create Trip</button>
-    </div>
+      <button type="submit" class="btn btn-primary">Create Trip</button>
+ 
 </form>
+
+  

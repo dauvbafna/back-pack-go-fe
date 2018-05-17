@@ -1,37 +1,75 @@
-<p>
-  trip-detail-page works!
-</p>
-
 <ng-container *ngIf="!trip">
     Loading . . . . . .
   </ng-container>
 
 <ng-container *ngIf="trip">
-    <app-trip-card [trip]="trip"></app-trip-card>
+  <mat-card class="tripdetailhead">
+    {{trip.tripName}}
+  </mat-card>
 
-    <h2>Itinerary</h2>
     <ng-container *ngIf="!itineraryStatus">
-        <a (click)="newItinerary(trip._id)">Create Itinerary</a>
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-sm-6 col-lg-4">
+              <div class="card bg-dark text-center">
+                <img class="card-img img-fluid" src="https://i0.wp.com/www.trvbox.com/wp-content/themes/myseret/img/countries-icon.png" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h2 class="card-text iphone5"><a (click)="newItinerary(trip._id)">Create Itinerary</a></h2>
+                  </div>
+              </div>
+            </div>
+          </div>
     </ng-container>
 
     <ng-container *ngIf="itineraryStatus">
-        <a [routerLink]="['/trip/', trip._id, 'itinerary', itineraryId]">View Itinerary</a>
+      <mat-card class="tripdetailcard">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-sm-6 col-lg-4">
+              <div class="card bg-dark text-center">
+                <img mat-card-image class="card-img img-fluid" src="https://i0.wp.com/www.trvbox.com/wp-content/themes/myseret/img/countries-icon.png" alt="Card image">
+                  <div class="card-img-overlay">
+                    <h2 class="card-text iphone5"><a [routerLink]="['/trip/', trip._id, 'itinerary', itineraryId]">View Itinerary</a></h2>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </mat-card>
     </ng-container>
 
-    <h2>Reservations</h2>
-    <a [routerLink]="['/trip/', trip._id, 'reservations']">Add reservations</a>
+    <mat-card class="tripdetailcard">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-sm-6 col-lg-4">
+          <div class="card bg-dark text-center">
+            <img mat-card-image class="card-img img-fluid" src="http://ixsmtravel.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/i/c/icon-map-d9027152ea7aa05701d604aba74ef622.png" alt="Card image">
+              <div class="card-img-overlay">
+                  <h2 class="card-text iphone5"><a [routerLink]="['/trip/', trip._id, 'destinations']">Explore destinations</a></h2>
+              </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
     
-    <h2>Destinations</h2>
-    <a [routerLink]="['/trip/', trip._id, 'destinations']">Explore destinations</a>
-
-    <h2>Invite friends</h2>
-    <a [routerLink]="['/trip/', trip._id, 'invite']"> Invite to trip</a>
+    <mat-card class="tripdetailcard">
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-sm-6 col-lg-4">
+          <div class="card bg-dark text-center">
+            <img mat-card-image class="card-img img-fluid" src="https://www.sarthaks.com/refer-friend/icon-group.png" alt="Card image">
+              <div class="card-img-overlay">
+                  <h2 class="card-text iphone5"><a [routerLink]="['/trip/', trip._id, 'invite']"> Invite to trip</a></h2>
+              </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
 
     <h2>Who's Travelling</h2>
     <ng-container *ngFor="let user of trip.users">
-      <p>{{user.username}}</p>
+        <mat-card class="travellers">
+            <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+              <h1><mat-card-title>{{user.username}}</mat-card-title></h1>
+            </mat-card-header>
+        </mat-card>
     </ng-container>
 
-  </ng-container>
-  
+</ng-container>
 

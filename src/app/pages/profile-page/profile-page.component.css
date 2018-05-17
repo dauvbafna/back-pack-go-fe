@@ -1,0 +1,31 @@
+.createtrip{
+  margin-top: 10px;
+  text-align: center;
+  background-color: white;
+  color:whitesmoke;
+  font-size: 25px;
+  font-weight: 800;
+  background-image: linear-gradient(to left bottom, #f6a53a, #f06343, #d2125c, #950076, #220d83);
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.mat-card{
+  align-items: center;
+}
+
+.trippagecard{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  background-color: white;
+}
+
+.mat-card-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #220d83;
+}

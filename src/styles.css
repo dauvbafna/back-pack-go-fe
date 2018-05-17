@@ -2,16 +2,17 @@
 
 /* ---- reset ---- */
 
-html {
+/* html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
-}
+} */
 
 body {
   margin: 0;
   padding: 0;
+  /* background-image: radial-gradient(circle, #e2e2e9, #e0e6f1, #daeaf8, #d3f0fb, #ccf5fb); */
 }
 
 
@@ -44,11 +45,6 @@ p {
   background: #111;
 }
 
-#site-footer {
-  color: white;
-  padding: 60px 0;
-  background: #111;
-}
 
 #site-main {
   margin-bottom: 60px;
@@ -56,6 +52,7 @@ p {
 
 .container {
   margin: 0 20px;
+  align-items: center;
 }
 
 .section {
@@ -73,6 +70,13 @@ p {
 /* ---- components ---- */
 
 /* -- forms -- */
+
+.login-form{
+  position: relative;
+  padding: 1rem;
+  border: solid #f7f7f9;
+  border-width: .2rem 0 0;
+}
 
 form.is-processing {
 	opacity: 0.5;
@@ -101,9 +105,11 @@ form .submit button {
   padding: 5px 20px;
   text-align: center;
   font-size: 16px;
-  background-color: cyan;
   cursor: pointer;
 }
+
+.btn-grad {background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%)};
+.btn-grad :hover { background-position: right center; };
 
 form .field.has-error label {
 	color: red;

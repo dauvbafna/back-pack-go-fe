@@ -1,14 +1,19 @@
-<p>
-  trips-page works! (rename component to trip page)
-</p>
 
-<div>
-    <a [routerLink]="['/trip/create']">Create new trip</a>
+<mat-card class="createtrip">
+    <button mat-fab color="accent" [routerLink]="['/trip/create']">Create</button>
+</mat-card>
 
-        <div>Upcoming trips</div>
+
+      <h2>Upcoming trips</h2>
         <div *ngFor="let trip of trips">
-            <app-trip-card [trip]="trip"></app-trip-card>
-            <a [routerLink]="['/trip', trip._id]">Detail</a>
+            <mat-card class="trippagecard">
+            <mat-card-title class="tripcardtitle">
+                <app-trip-card [trip]="trip"></app-trip-card>
+            </mat-card-title>
+            <mat-card-actions>
+                <button mat-raised-button [routerLink]="['/trip', trip._id]">Detail</button>
+            </mat-card-actions>
+            </mat-card>
         </div>
 
-</div>
+

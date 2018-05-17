@@ -55,7 +55,7 @@ export class DestinationsPageComponent implements OnInit {
   }
 
   handleRestaurants(destination) {
-    this.queryString = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed/v1/search?keyx=${environment.gmKey}&q=restaurants+in+${destination.destinationName}`);
+    this.queryString = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.google.com/maps/embed/v1/search?key=${environment.gmKey}&q=restaurants+in+${destination.destinationName}`);
     console.log(this.queryString);
   }
 }

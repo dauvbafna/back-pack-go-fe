@@ -14,6 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatChipsModule} from '@angular/material/chips';
 import { environment } from '../environments/environment';
+import {ShareButtonsModule} from 'ngx-sharebuttons';
 
 // components
 import { TripCardComponent } from './components/trip-card/trip-card.component';
@@ -49,7 +50,7 @@ import { RequireUserGuardService } from './guards/require-user-guard.service';
 
 
 const routes: Routes = [
-  { path: '',  component: HomePageComponent, canActivate: [ InitAuthGuardService ] },
+  { path: '',  redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginPageComponent, canActivate: [ RequireAnonGuardService ]},
   { path: 'signup', component: SignUpPageComponent, canActivate: [ RequireAnonGuardService ]},
   { path: 'trip', component: ProfilePageComponent, canActivate: [ RequireUserGuardService ]},
@@ -99,7 +100,8 @@ const routes: Routes = [
       MatInputModule,
       MatFormFieldModule,
       MatTabsModule,
-      MatChipsModule
+      MatChipsModule,
+      ShareButtonsModule.forRoot(),
   ],
   providers: [AuthService,
     InitAuthGuardService,
