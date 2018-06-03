@@ -108,8 +108,8 @@ form .submit button {
   cursor: pointer;
 }
 
-.btn-grad {background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%)};
-.btn-grad :hover { background-position: right center; };
+.btn-grad {background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%)}
+.btn-grad :hover { background-position: right center; }
 
 form .field.has-error label {
 	color: red;
