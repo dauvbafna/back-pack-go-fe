@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://backpackgoserver-env.mvqhyg3jeh.ap-south-1.elasticbeanstalk.com',
+  apiUrl: 'https://backpackgo-server.herokuapp.com',
   gmKey: 'AIzaSyBSqhCPvGdIep-riFlAlKyWojxgh3T-BwM'
 };
